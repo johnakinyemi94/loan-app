@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f9fc;
+  --foreground: #0f172a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background-image: linear-gradient(135deg, rgba(224, 242, 254, 0.45), transparent 42%), linear-gradient(315deg, rgba(236, 252, 203, 0.38), transparent 38%);
+}
+
+::selection {
+  background: #bae6fd;
+  color: #0f172a;
+}
+
+@layer components {
+  .loan-application-form {
+    @apply rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)] backdrop-blur sm:p-8;
+  }
+
+  .loan-application-form .form-group {
+    @apply mb-5 sm:w-[calc(50%-0.625rem)];
+  }
+
+  .loan-application-form .form-group:first-child {
+    @apply sm:w-full;
+  }
+
+  .loan-application-form label {
+    @apply mb-2 block text-sm font-semibold text-slate-800;
+  }
+
+  .loan-application-form .form-input {
+    @apply w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10;
+  }
+
+  .loan-application-form .error {
+    @apply mt-1 block text-xs font-medium text-rose-600;
+  }
+
+  .loan-application-form .submit-btn {
+    @apply mt-3 flex w-full items-center justify-center rounded-xl bg-slate-950 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:bg-sky-800 focus:outline-none focus:ring-4 focus:ring-sky-500/20 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .loan-application-form .result-container {
+    @apply mt-8 rounded-xl border border-sky-100 bg-sky-50 p-5;
+  }
+
+  .loan-application-form .result h3 {
+    @apply mt-2 text-2xl font-semibold text-slate-950;
+  }
+
+  .loan-application-form .result p {
+    @apply text-sm leading-6 text-slate-600;
+  }
+
+  .loan-application-form .result strong {
+    @apply text-slate-900;
+  }
+
+  .loan-application-form .email-section,
+  .loan-application-form .offers-section {
+    @apply mt-5 border-t border-sky-200 pt-5;
+  }
+
+  .loan-application-form .email-section h4,
+  .loan-application-form .offers-section h4 {
+    @apply text-sm font-bold text-slate-900;
+  }
+
+  .loan-application-form .email-preview {
+    @apply mt-2 whitespace-pre-line;
+  }
+
+  .loan-application-form .offers-list {
+    @apply mt-3 grid gap-3 sm:grid-cols-2;
+  }
+
+  .loan-application-form .offer-card {
+    @apply rounded-lg border border-sky-100 bg-white/70 p-4;
+  }
+
+  .loan-application-form .offer-card p {
+    @apply text-sm;
+  }
+
+  .loan-application-form .application-id {
+    @apply mt-5 text-xs text-slate-400;
+  }
+}
