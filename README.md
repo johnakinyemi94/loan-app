@@ -90,12 +90,12 @@ The score is deliberately easy to inspect. A later version can introduce Gradien
 
 ### Milestone 1: Working Prototype
 
-- [x] Create the Next.js frontend and FastAPI backend
-- [x] Build and style the customer application form
-- [x] Validate the shared request and response types
-- [x] Connect the form to the API
-- [x] Return an immediate baseline decision
-- [x] Display approval, denial, confidence, and alternative offers
+- [ ] Create the Next.js frontend and FastAPI backend
+- [ ] Build and style the customer application form
+- [ ] Validate the shared request and response types
+- [ ] Connect the form to the API
+- [ ] Return an immediate baseline decision
+- [ ] Display approval, denial, confidence, and alternative offers
 
 ### Milestone 2: Reliable Product Behaviour
 
