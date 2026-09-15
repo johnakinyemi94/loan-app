@@ -1,4 +1,5 @@
 {
+  "framework": "nextjs",
   "functions": {
     "backend/main.py": {
       "runtime": "python3.11"
