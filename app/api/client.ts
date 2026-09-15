@@ -1,10 +1,8 @@
 import axios from 'axios';
 import { LoanApplicationRequest, LoanApplicationResponse, EscalatedApplication, AdminReviewAction } from '@/app/types';
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://loan-app-ivory-zeta.vercel.app').replace(/\/$/, '');
-
+// Routes are same-origin Next.js API handlers — no base URL needed.
 const client = axios.create({
-  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
