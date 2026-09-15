@@ -1,7 +1,8 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional, List
+from mangum import Mangum
 import uuid
 from datetime import datetime
 import logging
@@ -298,10 +299,13 @@ async def get_metrics():
         logger.error(f"Error calculating metrics: {str(e)}")
         raise HTTPException(status_code=500, detail="Error calculating metrics")
 
-@app.get("/health")
+@app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
+# Vercel serverless handler
+handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn

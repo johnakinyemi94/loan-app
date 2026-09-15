@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { LoanApplicationRequest, LoanApplicationResponse, EscalatedApplication, AdminReviewAction } from '@/app/types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://loan-app-ivory-zeta.vercel.app/';
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://loan-app-ivory-zeta.vercel.app').replace(/\/$/, '');
 
 const client = axios.create({
   baseURL: API_URL,
@@ -39,5 +39,5 @@ export const apiClient = {
   
 
   healthCheck: () =>
-    client.get('/health'),
+    client.get('/api/health'),
 };
