@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { LoanApplicationRequest, LoanApplicationResponse, EscalatedApplication, AdminReviewAction } from '@/app/types';
 
-// Routes are same-origin Next.js API handlers — no base URL needed.
 const client = axios.create({
   headers: {
     'Content-Type': 'application/json',

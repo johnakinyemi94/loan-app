@@ -6,14 +6,14 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, age, income, credit_score, loan_amount, employment_years, existing_debt } = body;
 
-    // Basic validation
+ 
     if (!name || age < 18 || age > 120 || income <= 0 || credit_score < 300 || credit_score > 850 || loan_amount <= 0 || employment_years < 0 || existing_debt < 0) {
       return NextResponse.json({ detail: 'Invalid request data' }, { status: 422 });
     }
 
     const appId = randomUUID().slice(0, 8);
 
-    // Scoring logic (ported from backend/main.py)
+   
     const incomeToLoan = income / loan_amount;
     const debtToIncome = existing_debt / income;
     let score = 0.0;
