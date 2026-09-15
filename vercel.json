@@ -1,8 +1,5 @@
 {
   "framework": "nextjs",
-  "functions": {
-    "backend/main.py": {}
-  },
   "rewrites": [
     { "source": "/api/:path*", "destination": "/backend/main.py" },
     { "source": "/(.*)", "destination": "/$1" }
