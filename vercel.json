@@ -1,9 +1,7 @@
 {
   "framework": "nextjs",
   "functions": {
-    "backend/main.py": {
-      "runtime": "python3.11"
-    }
+    "backend/main.py": {}
   },
   "rewrites": [
     { "source": "/api/:path*", "destination": "/backend/main.py" },
